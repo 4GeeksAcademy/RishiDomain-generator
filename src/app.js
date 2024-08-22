@@ -12,13 +12,18 @@ window.onload = function() {
   let nouns = ["jogger", "racoon", "AI"];
   let tlds = [".com", ".org", ".gov"];
 
+  const generatorElement = document.querySelector("#generator");
+  let domainNames = "";
+
   for (let pronoun of pronouns) {
     for (let adj of adjs) {
       for (let noun of nouns) {
         for (let tld of tlds) {
           console.log(`${pronoun}-${adj}-${noun}${tld}`);
+          domainNames += `${pronoun}-${adj}-${noun}${tld}<br>`;
         }
       }
     }
   }
+  generatorElement.innerHTML = domainNames;
 };
